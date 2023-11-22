@@ -1,0 +1,35 @@
+{
+  "students": [
+    {
+      "id": 0
+    },
+    {
+      "name": "pranit",
+      "gender": "Male",
+      "course": "HTML",
+      "degree": [
+        "B.COM"
+      ],
+      "id": 1
+    },
+    {
+      "name": "pranit",
+      "gender": "Male",
+      "course": "HTML",
+      "degree": [
+        "B.COM"
+      ],
+      "id": 2
+    },
+    {
+      "name": "pranit mule",
+      "gender": "Female",
+      "course": "CSS",
+      "degree": [
+        "B.A",
+        "B.COM"
+      ],
+      "id": 3
+    }
+  ]
+}
