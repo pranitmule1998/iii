@@ -14,7 +14,8 @@ const Update=()=>{
   
     async function fetchdata(){
         const result = await
-        axios.get(`http://localhost:8000/students/${studentId}`)
+        axios.get(`http://localhost:8000/students/get/${studentId}`)
+        result.data=result.data[0]
         setValue("name",result.data.name);
         setValue("gender",result.data.gender);
         setValue("course",result.data.course);
@@ -23,7 +24,7 @@ const Update=()=>{
        }
 
        function savedata(data){
-        axios.put(`http://localhost:8000/students/${studentId}`,data)
+        axios.put(`http://localhost:8000/students/update/${studentId}`,data)
         navigate("/show");
        
     }

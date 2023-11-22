@@ -56,6 +56,46 @@ app.post("/students",(req,res)=>{
  
  })
 
+
+ app.get("/students/get/:id",(req,res)=>{
+    const studentId =req.params.id;
+    const q = "select * from students where id = ?";
+ 
+    connection.query(q,[studentId],(error,data)=>{
+      if(error){
+         console.log("error");
+         return res.status(500).send({error:"error in data fetching"});
+      }
+      return res.json(data);
+    })
+ 
+ })
+
+
+ app.put("/students/update/:id",(req,res)=>{
+    const studentId =req.params.id;
+    const q = "update students set `name`=? , `gender`=? , `course`=? , `degree`=? where id = ?   ";
+
+    const values = [
+        req.body.name,
+        req.body.gender,
+        req.body.course,
+        req.body.degree,
+        studentId
+    ]
+ 
+    connection.query(q,values,(error,data)=>{
+      if(error){
+         console.log("error");
+         return res.status(500).send({error:"error in data fetching"});
+      }
+      return res.json(data);
+    })
+ 
+ })
+
+
+
  app.listen(8000,()=>{
     console.log("run on 8000");
  })
